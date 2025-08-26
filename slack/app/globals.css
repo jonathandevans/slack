@@ -5,6 +5,8 @@
 
 @theme {
   --color-slack-purple: #5c3b58;
+  --color-slack-purple-dark: #481349;
+  --color-slack-purple-light: #5e2c5f;
 }
 
 @theme inline {

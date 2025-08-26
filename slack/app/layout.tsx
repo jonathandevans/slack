@@ -2,6 +2,8 @@ import { ReactNode } from "react";
 import type { Metadata } from "next";
 import { ConvexClientProvider } from "@/components/providers/convex-client-provider";
 import { ConvexAuthNextjsServerProvider } from "@convex-dev/auth/nextjs/server";
+import { ModalProvider } from "@/components/providers/modal-provider";
+import { Toaster } from "@/components/ui/sonner";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -22,7 +24,11 @@ export default function RootLayout({
     <ConvexAuthNextjsServerProvider>
       <html lang="en">
         <body className={`${inter.className} antialiased`}>
-          <ConvexClientProvider>{children}</ConvexClientProvider>
+          <ConvexClientProvider>
+            <ModalProvider />
+            {children}
+            <Toaster />
+          </ConvexClientProvider>
         </body>
       </html>
     </ConvexAuthNextjsServerProvider>

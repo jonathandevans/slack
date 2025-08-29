@@ -23,7 +23,7 @@ export default function WorkspaceIdLayout({
           autoSaveId="workspace-layout"
         >
           <ResizablePanel
-            defaultSize={20}
+            defaultSize={24}
             minSize={11}
             className="bg-slack-purple-light"
           >

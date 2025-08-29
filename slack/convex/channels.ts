@@ -2,8 +2,10 @@ import { v } from "convex/values";
 import { query } from "./_generated/server";
 import { auth } from "./auth";
 
-export const current = query({
-  args: { workspaceId: v.id("workspaces") },
+export const get = query({
+  args: {
+    workspaceId: v.id("workspaces"),
+  },
   handler: async (ctx, args) => {
     const userId = await auth.getUserId(ctx);
     if (!userId) throw new Error("Unauthorised");
@@ -16,6 +18,13 @@ export const current = query({
       .unique();
     if (!member) return null;
 
-    return member;
+    const channels = await ctx.db
+      .query("channels")
+      .withIndex("by_workspace_id", (q) =>
+        q.eq("workspaceId", args.workspaceId)
+      )
+      .collect();
+
+    return channels;
   },
 });

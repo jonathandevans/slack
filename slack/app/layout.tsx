@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { ConvexClientProvider } from "@/components/providers/convex-client-provider";
 import { ConvexAuthNextjsServerProvider } from "@convex-dev/auth/nextjs/server";
 import { ModalProvider } from "@/components/providers/modal-provider";
+import { JotaiProvider } from "@/components/providers/jotai-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -25,9 +26,11 @@ export default function RootLayout({
       <html lang="en">
         <body className={`${inter.className} antialiased`}>
           <ConvexClientProvider>
-            <ModalProvider />
-            {children}
-            <Toaster />
+            <JotaiProvider>
+              <ModalProvider />
+              {children}
+              <Toaster />
+            </JotaiProvider>
           </ConvexClientProvider>
         </body>
       </html>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useMemo } from "react";
-import { UserButton } from "@/components/ui/user-button";
 import { useGetWorkspaces } from "@/lib/api/use-get-workspaces";
 import { useCreateWorkspaceModal } from "@/lib/store/use-create-workspace-modal";
 import { useRouter } from "next/navigation";
@@ -23,9 +22,5 @@ export default function HomeRoute() {
     }
   }, [workspaceId, isLoading, open, setOpen, router]);
 
-  return (
-    <>
-      <UserButton />
-    </>
-  );
+  return <></>;
 }

@@ -7,6 +7,7 @@ import { JotaiProvider } from "@/components/providers/jotai-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "./editor.css"
 
 const inter = Inter({ subsets: ["latin"] });
 

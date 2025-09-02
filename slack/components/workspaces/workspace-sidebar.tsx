@@ -38,9 +38,11 @@ import { useGetMembers } from "@/lib/api/use-get-members";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { useCreateChannelModal } from "@/lib/store/use-create-channel-modal";
 import { InviteModal } from "./modals/invite-modal";
+import { useChannelId } from "@/lib/hooks/use-channel-id";
 
 export function WorkspaceSidebar() {
   const workspaceId = useWorkspaceId();
+  const channelId = useChannelId();
 
   const [_open, setOpen] = useCreateChannelModal();
 
@@ -85,7 +87,6 @@ export function WorkspaceSidebar() {
           label="Threads"
           icon={MessageSquareText}
           id="threads"
-          variant="active"
         />
         <WorkspaceSidebarItem
           label="Drafts & Sent"
@@ -105,6 +106,7 @@ export function WorkspaceSidebar() {
             icon={HashIcon}
             label={item.name}
             id={item._id}
+            variant={channelId === item._id ? "active" : "default"}
           />
         ))}
       </WorkspaceSidebarSection>

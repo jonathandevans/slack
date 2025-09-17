@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useMemo } from "react";
-import { useCurrentMember } from "@/lib/api/use-current-member";
-import { useGetChannels } from "@/lib/api/use-get-channels";
-import { useGetWorkspace } from "@/lib/api/use-get-workspace";
+import { useCurrentMember } from "@/lib/api/members/use-current-member";
+import { useGetChannels } from "@/lib/api/channels/use-get-channels";
+import { useGetWorkspace } from "@/lib/api/workspaces/use-get-workspace";
 import { useWorkspaceId } from "@/lib/hooks/use-workspace-id";
 import { useCreateChannelModal } from "@/lib/store/use-create-channel-modal";
 import { Loader2, TriangleAlert } from "lucide-react";

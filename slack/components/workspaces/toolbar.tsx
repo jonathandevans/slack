@@ -3,7 +3,7 @@
 import { Info, Search } from "lucide-react";
 import { Button } from "../ui/button";
 import { useWorkspaceId } from "@/lib/hooks/use-workspace-id";
-import { useGetWorkspace } from "@/lib/api/use-get-workspace";
+import { useGetWorkspace } from "@/lib/api/workspaces/use-get-workspace";
 
 export function Toolbar() {
   const workspaceId = useWorkspaceId();

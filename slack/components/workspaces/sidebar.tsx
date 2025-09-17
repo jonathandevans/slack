@@ -16,8 +16,8 @@ import { IconType } from "react-icons/lib";
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 import { useWorkspaceId } from "@/lib/hooks/use-workspace-id";
-import { useGetWorkspaces } from "@/lib/api/use-get-workspaces";
-import { useGetWorkspace } from "@/lib/api/use-get-workspace";
+import { useGetWorkspaces } from "@/lib/api/workspaces/use-get-workspaces";
+import { useGetWorkspace } from "@/lib/api/workspaces/use-get-workspace";
 import { useCreateWorkspaceModal } from "@/lib/store/use-create-workspace-modal";
 import {
   DropdownMenu,

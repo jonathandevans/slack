@@ -6,7 +6,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import { useCreateChannel } from "@/lib/api/use-create-channel";
+import { useCreateChannel } from "@/lib/api/channels/use-create-channel";
 import { useWorkspaceId } from "@/lib/hooks/use-workspace-id";
 import { useCreateChannelModal } from "@/lib/store/use-create-channel-modal";
 import { useRouter } from "next/navigation";

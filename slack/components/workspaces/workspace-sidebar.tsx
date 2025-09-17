@@ -1,8 +1,8 @@
 "use client";
 
 import { ReactNode, useState } from "react";
-import { useCurrentMember } from "@/lib/api/use-current-member";
-import { useGetWorkspace } from "@/lib/api/use-get-workspace";
+import { useCurrentMember } from "@/lib/api/members/use-current-member";
+import { useGetWorkspace } from "@/lib/api/workspaces/use-get-workspace";
 import { useWorkspaceId } from "@/lib/hooks/use-workspace-id";
 import {
   AlertTriangle,
@@ -16,7 +16,7 @@ import {
   SendHorizonal,
   SquarePen,
 } from "lucide-react";
-import { useGetChannels } from "@/lib/api/use-get-channels";
+import { useGetChannels } from "@/lib/api/channels/use-get-channels";
 import { IconType } from "react-icons/lib";
 import { cva, VariantProps } from "class-variance-authority";
 import { Button } from "../ui/button";
@@ -34,7 +34,7 @@ import {
 import { Hint } from "../ui/hint";
 import { FaCaretDown } from "react-icons/fa";
 import { useToggle } from "react-use";
-import { useGetMembers } from "@/lib/api/use-get-members";
+import { useGetMembers } from "@/lib/api/members/use-get-members";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { useCreateChannelModal } from "@/lib/store/use-create-channel-modal";
 import { InviteModal } from "./modals/invite-modal";

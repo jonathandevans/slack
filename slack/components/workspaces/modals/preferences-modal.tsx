@@ -11,8 +11,8 @@ import {
   DialogTrigger,
 } from "../../ui/dialog";
 import { Trash2 } from "lucide-react";
-import { useUpdateWorkspace } from "@/lib/api/use-update-workspace";
-import { useDeleteWorkspace } from "@/lib/api/use-delete-workspace";
+import { useUpdateWorkspace } from "@/lib/api/workspaces/use-update-workspace";
+import { useDeleteWorkspace } from "@/lib/api/workspaces/use-delete-workspace";
 import { Input } from "../../ui/input";
 import { Button } from "../../ui/button";
 import { useWorkspaceId } from "@/lib/hooks/use-workspace-id";

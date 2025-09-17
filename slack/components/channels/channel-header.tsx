@@ -12,26 +12,26 @@ import {
 import { Trash2 } from "lucide-react";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { Input } from "../ui/input";
-import { useUpdateChannel } from "@/lib/api/use-update-channel";
+import { useUpdateChannel } from "@/lib/api/channels/use-update-channel";
 import { useChannelId } from "@/lib/hooks/use-channel-id";
 import { toast } from "sonner";
-import { useDeleteChannel } from "@/lib/api/use-delete-channel";
+import { useDeleteChannel } from "@/lib/api/channels/use-delete-channel";
 import { useConfirm } from "@/lib/hooks/use-confirm";
 import { useRouter } from "next/navigation";
 import { useWorkspaceId } from "@/lib/hooks/use-workspace-id";
-import { useCurrentMember } from "@/lib/api/use-current-member";
+import { useCurrentMember } from "@/lib/api/members/use-current-member";
 
 interface ChannelHeaderProps {
-  title: string;
+  channelName: string;
 }
 
-export function ChannelHeader({ title }: ChannelHeaderProps) {
+export function ChannelHeader({ channelName }: ChannelHeaderProps) {
   const router = useRouter();
 
   const workspaceId = useWorkspaceId();
   const channelId = useChannelId();
 
-  const [value, setValue] = useState(title);
+  const [value, setValue] = useState(channelName);
   const [editOpen, setEditOpen] = useState(false);
 
   const { data: member } = useCurrentMember({ workspaceId });
@@ -103,13 +103,13 @@ export function ChannelHeader({ title }: ChannelHeaderProps) {
               className="text-lg font-semibold px-2 overflow-hidden w-auto"
               size="sm"
             >
-              <span># {title}</span>
+              <span># {channelName}</span>
               <FaChevronDown className="size-2.5" />
             </Button>
           </DialogTrigger>
           <DialogContent className="p-0 bg-gray-50 overflow-hidden">
             <DialogHeader className="p-4 border-b bg-white">
-              <DialogTitle># {title}</DialogTitle>
+              <DialogTitle># {channelName}</DialogTitle>
             </DialogHeader>
             <div className="px-4 pb-4 flex flex-col gap-y-2">
               <Dialog open={editOpen} onOpenChange={handleEditOpen}>
@@ -121,7 +121,7 @@ export function ChannelHeader({ title }: ChannelHeaderProps) {
                         Edit
                       </p>
                     </div>
-                    <p className="text-sm text-left"># {title}</p>
+                    <p className="text-sm text-left"># {channelName}</p>
                   </button>
                 </DialogTrigger>
                 <DialogContent>

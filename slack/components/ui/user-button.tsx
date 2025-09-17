@@ -1,6 +1,6 @@
 "use client";
 
-import { useCurrentUser } from "@/lib/api/use-current-user";
+import { useCurrentUser } from "@/lib/api/users/use-current-user";
 import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 import {
   DropdownMenu,

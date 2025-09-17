@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo } from "react";
-import { useGetWorkspaces } from "@/lib/api/use-get-workspaces";
+import { useGetWorkspaces } from "@/lib/api/workspaces/use-get-workspaces";
 import { useCreateWorkspaceModal } from "@/lib/store/use-create-workspace-modal";
 import { useRouter } from "next/navigation";
 
